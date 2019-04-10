@@ -9,6 +9,7 @@ namespace RolePlayingGame
     interface IClassType
     {
         string ClassType { get; set; }
+
         int ClassLevel { get; set; }
     }
 }

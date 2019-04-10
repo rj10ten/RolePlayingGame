@@ -6,11 +6,12 @@ namespace RolePlayingGameTests
     [TestClass]
     public class PlayerTests
     {
+        HumanPlayer player = new HumanPlayer();
+
         [TestMethod]
         public void TestIfWeCanSetPlayerName()
         {
             // Arrange
-            HumanPlayer player = new HumanPlayer();
 
             // Act
             player.Name = "Rajan";
@@ -23,7 +24,6 @@ namespace RolePlayingGameTests
         public void TestIfWeCanSetAPlayersLevel()
         {
             // Arrange
-            HumanPlayer player = new HumanPlayer();
 
             // Act
             player.Level = 1;
@@ -36,7 +36,6 @@ namespace RolePlayingGameTests
         public void TestIfWeCanSetAPlayersClassType()
         {
             // Arrange
-            HumanPlayer player = new HumanPlayer();
 
             // Act
             player.ClassType = "Monk";
@@ -49,13 +48,36 @@ namespace RolePlayingGameTests
         public void TestIfWeCanSetAPlayersClassLevel()
         {
             // Arrange
-            HumanPlayer player = new HumanPlayer();
 
             // Act
             player.ClassLevel = 1;
 
             // Assert
             Assert.AreEqual(1, player.classLevel);
+        }
+
+        [TestMethod]
+        public void TestIfWeCanSetPlayersMaxHealth()
+        {
+            // Arrange
+
+            // Act
+            player.MaxHealth = 10;
+
+            // Assert
+            Assert.AreEqual(10, player.maxHealth);
+        }
+
+        [TestMethod]
+        public void TestIfWeCanSetPlayersCurrentHealth()
+        {
+            // Arrange
+
+            // Act
+            player.CurrentHealth = 10;
+
+            // Assert
+            Assert.AreEqual(10, player.currentHealth);
         }
     }
 }

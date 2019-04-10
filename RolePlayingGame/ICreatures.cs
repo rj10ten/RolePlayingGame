@@ -11,5 +11,9 @@ namespace RolePlayingGame
         string Name { get; set; }
         
         int Level { get; set; }
+
+        int MaxHealth { get; set; }
+
+        int CurrentHealth { get; set; }
     }
 }
