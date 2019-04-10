@@ -1,26 +1,26 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using RolePlayingGame;
+﻿using RolePlayingGame;
+using Xunit;
 
 namespace RolePlayingGameTests
 {
-    [TestClass]
     public class PlayerTests
     {
         HumanPlayer player = new HumanPlayer();
 
-        [TestMethod]
+        [Fact]
         public void TestIfWeCanSetPlayerName()
         {
             // Arrange
+            HumanPlayer player = new HumanPlayer();
 
             // Act
             player.Name = "Rajan";
 
             // Assert
-            Assert.AreEqual("Rajan", player.name);
+            Assert.Equal("Rajan", player.name);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestIfWeCanSetAPlayersLevel()
         {
             // Arrange
@@ -29,10 +29,10 @@ namespace RolePlayingGameTests
             player.Level = 1;
 
             // Assert
-            Assert.AreEqual(1, player.level);
+            Assert.Equal(1, player.level);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestIfWeCanSetAPlayersClassType()
         {
             // Arrange
@@ -41,10 +41,10 @@ namespace RolePlayingGameTests
             player.ClassType = "Monk";
 
             // Assert
-            Assert.AreEqual("Monk", player.classType);
+            Assert.Equal("Monk", player.classType);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestIfWeCanSetAPlayersClassLevel()
         {
             // Arrange
@@ -53,10 +53,10 @@ namespace RolePlayingGameTests
             player.ClassLevel = 1;
 
             // Assert
-            Assert.AreEqual(1, player.classLevel);
+            Assert.Equal(1, player.classLevel);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestIfWeCanSetPlayersMaxHealth()
         {
             // Arrange
@@ -65,10 +65,10 @@ namespace RolePlayingGameTests
             player.MaxHealth = 10;
 
             // Assert
-            Assert.AreEqual(10, player.maxHealth);
+            Assert.Equal(10, player.maxHealth);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestIfWeCanSetPlayersCurrentHealth()
         {
             // Arrange
@@ -77,7 +77,7 @@ namespace RolePlayingGameTests
             player.CurrentHealth = 10;
 
             // Assert
-            Assert.AreEqual(10, player.currentHealth);
+            Assert.Equal(10, player.currentHealth);
         }
     }
 }
