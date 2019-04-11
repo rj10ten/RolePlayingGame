@@ -72,7 +72,7 @@ namespace RolePlayingGame
 
         private void ChooseCharacterClass()
         {
-            this.player.ChooseClass(userClassChoice);
+            this.player.ChooseClass();
             this.player.ReportChosenClass();
         }
 

@@ -28,41 +28,38 @@ namespace RolePlayingGame
         }
 
         // Change this horrendous if tree into a switch
-        public void ChooseClass(String userClassChoice)
+        public void ChooseClass()
         {
             // Class selection
             Console.WriteLine(Choose_Class_Text);
             Console.WriteLine(Class_List);
-            userClassChoice = Console.ReadLine();
+            string userClassChoice = Console.ReadLine();
 
-            if (int.Parse(userClassChoice) == 1)
+            switch (int.Parse(userClassChoice))
             {
-                ClassType = "Monk";
-            }
+                case 1:
+                    ClassType = "Monk";
+                    break;
 
-            if (int.Parse(userClassChoice) == 2)
-            {
-                ClassType = "Warrior";
-            }
+                case 2:
+                    ClassType = "Warrior";
+                    break;
 
-            if (int.Parse(userClassChoice) == 3)
-            {
-                ClassType = "Mage";
-            }
+                case 3:
+                    ClassType = "Mage";
+                    break;
 
-            if (int.Parse(userClassChoice) == 4)
-            {
-                ClassType = "Rogue";
-            }
+                case 4:
+                    ClassType = "Rogue";
+                    break;
 
-            if (int.Parse(userClassChoice) == 5)
-            {
-                ClassType = "Priest";
-            }
+                case 5:
+                    ClassType = "Priest";
+                    break;
 
-            if (int.Parse(userClassChoice) == 6)
-            {
-                ClassType = "Paladin";
+                case 6:
+                    ClassType = "Paladin";
+                    break;
             }
         }
 
@@ -82,10 +79,41 @@ namespace RolePlayingGame
 
             if (int.Parse(changeClass) == 1)
             {
-                string newClass = Console.ReadLine();
-                ClassType = ClassType + ", " + newClass;
                 // This overrides the previous class, need to add to an array perhaps
-                ChooseClass(newClass);
+                // ChooseClass();
+
+                // Class selection
+                Console.WriteLine("Please choose a new class from the list:");
+                Console.WriteLine(Class_List);
+                string newClass = Console.ReadLine();
+
+                switch (int.Parse(newClass))
+                {
+                    case 1:
+                        ClassType = ClassType + ", " + "Monk";
+                        break;
+
+                    case 2:
+                        ClassType = ClassType + ", " + "Warrior";
+                        break;
+
+                    case 3:
+                        ClassType = ClassType + ", " + "Mage";
+                        break;
+
+                    case 4:
+                        ClassType = ClassType + ", " + "Rogue";
+                        break;
+
+                    case 5:
+                        ClassType = ClassType + ", " + "Priest";
+                        break;
+
+                    case 6:
+                        ClassType = ClassType + ", " + "Paladin";
+                        break;
+                }
+
                 ReportChosenClass();
             }
             else
