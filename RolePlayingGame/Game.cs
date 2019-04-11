@@ -76,6 +76,7 @@ namespace RolePlayingGame
             this.player.ReportChosenClass();
         }
 
+        // This method needs work before implementing
         private void ChooseAnotherClass()
         {
 
