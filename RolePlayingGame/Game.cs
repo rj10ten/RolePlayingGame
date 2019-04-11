@@ -20,6 +20,13 @@ namespace RolePlayingGame
         private const string ExitGameText = "Okay, I hope you play next time then.";
         private HumanPlayer player;
 
+        public void PlayGame()
+        {
+            Game game = new Game(player);
+            game.CreateGame();
+            game.MakeStarterCharacter();
+        }
+
         public void CreateGame()
         {
 
@@ -42,6 +49,8 @@ namespace RolePlayingGame
         {
             ChooseCharacterName();
             ChooseCharacterClass();
+            // This chooses a new class but overwrites the historical one without saving it
+            ChooseAnotherClass();
             SetAndPrintDefaultStats();
 
             // Confirmation of character completion, add loop to allow recreation of character
@@ -71,6 +80,12 @@ namespace RolePlayingGame
             this.player.ReportChosenClass();
         }
 
+        private void ChooseAnotherClass()
+        {
+
+            this.player.ChangeClass();
+        }
+
         private void ChooseCharacterName()
         {
             // Name selection
@@ -79,13 +94,5 @@ namespace RolePlayingGame
             this.player.Name = userInput;
             Console.WriteLine("You have chosen the name: " + userInput);
         }
-
-        public void PlayGame()
-        {
-            Game game = new Game(player);
-            game.CreateGame();
-            game.MakeStarterCharacter();
-        }
-
     }
 }

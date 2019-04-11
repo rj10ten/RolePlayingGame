@@ -8,6 +8,13 @@ namespace RolePlayingGame
 {
     public class HumanPlayer : ICreatures, IPlayer
     {
+        public string Name { get; set; }
+        public int Level { get; set; }
+        public string ClassType { get; set; }
+        public int ClassLevel { get; set; }
+        public int MaxHealth { get; set; }
+        public int CurrentHealth { get; set; }
+
         public void PrintStats()
         {
             Console.WriteLine("Your level is: " + Level + ".");
@@ -56,11 +63,24 @@ namespace RolePlayingGame
             Console.WriteLine("You have chosen " + ClassType + " as your class.");
         }
 
-        public string Name { get; set; }
-        public int Level { get; set; }
-        public string ClassType { get; set; }
-        public int ClassLevel { get; set; }
-        public int MaxHealth { get; set; }
-        public int CurrentHealth { get; set; }
+        // Figure out how to assign new ClassType and have ClassLevel be stored for previous class
+        public void ChangeClass()
+        {
+            Console.WriteLine("Would you like to change your class or stay with your current selection?" +
+                " Any levels gained in a class will remain and you can keep previously learned abilities.");
+            Console.WriteLine(" 1. Change Class, 2. Stick with my current class.");
+            string changeClass = Console.ReadLine();
+            if (int.Parse(changeClass) == 1)
+            {
+            string newClass = Console.ReadLine();
+            ClassType = ClassType + ", " + newClass;
+                // This overrides the previous class, need to add to an array perhaps
+            ChooseClass(newClass);
+            ReportChosenClass();
+            } else
+            {
+                Console.WriteLine("You have not chosen a new class. You are still a " + ClassType + ".");
+            }
+        }
     }
 }

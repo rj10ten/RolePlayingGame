@@ -17,7 +17,7 @@ namespace RolePlayingGameTests
             player.Name = "Rajan";
 
             // Assert
-            Assert.Equal("Rajan", player.name);
+            Assert.Equal("Rajan", player.Name);
         }
 
         [Fact]
@@ -29,7 +29,7 @@ namespace RolePlayingGameTests
             player.Level = 1;
 
             // Assert
-            Assert.Equal(1, player.level);
+            Assert.Equal(1, player.Level);
         }
 
         [Fact]
@@ -41,7 +41,7 @@ namespace RolePlayingGameTests
             player.ClassType = "Monk";
 
             // Assert
-            Assert.Equal("Monk", player.classType);
+            Assert.Equal("Monk", player.ClassType);
         }
 
         [Fact]
@@ -53,7 +53,7 @@ namespace RolePlayingGameTests
             player.ClassLevel = 1;
 
             // Assert
-            Assert.Equal(1, player.classLevel);
+            Assert.Equal(1, player.ClassLevel);
         }
 
         [Fact]
@@ -65,7 +65,7 @@ namespace RolePlayingGameTests
             player.MaxHealth = 10;
 
             // Assert
-            Assert.Equal(10, player.maxHealth);
+            Assert.Equal(10, player.MaxHealth);
         }
 
         [Fact]
@@ -77,7 +77,7 @@ namespace RolePlayingGameTests
             player.CurrentHealth = 10;
 
             // Assert
-            Assert.Equal(10, player.currentHealth);
+            Assert.Equal(10, player.CurrentHealth);
         }
     }
 }
