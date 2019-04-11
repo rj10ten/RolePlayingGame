@@ -50,7 +50,7 @@ namespace RolePlayingGame
             ChooseCharacterName();
             ChooseCharacterClass();
             // This chooses a new class but overwrites the historical one without saving it
-            ChooseAnotherClass();
+            // ChooseAnotherClass();
             SetAndPrintDefaultStats();
 
             // Confirmation of character completion, add loop to allow recreation of character
