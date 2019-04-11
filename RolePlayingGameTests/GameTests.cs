@@ -6,8 +6,8 @@ namespace RolePlayingGameTests
 {
     public class GameTests
     {
-        Mock<Game> mockGame = new Mock<Game>();
-        Mock<HumanPlayer> myPlayerMock = new Mock<HumanPlayer>();
+        private Mock<HumanPlayer> myPlayerMock = new Mock<HumanPlayer>();
+        private Mock<Game> mockGame = new Mock<Game>();
 
 
         [Fact]
@@ -18,7 +18,7 @@ namespace RolePlayingGameTests
             Game game = mockGame.Object;
 
             // Act
-            mockGame.Setup(mock => mock.PlayGame(player));
+            mockGame.Setup(mock => mock.PlayGame());
 
             // Assert
             mockGame.Verify(mock => mock.CreateGame(), Times.Once());

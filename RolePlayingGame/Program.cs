@@ -10,9 +10,9 @@ namespace RolePlayingGame
     {
         static void Main(string[] args)
         {
-            Game game = new Game();
             HumanPlayer player = new HumanPlayer();
-            game.PlayGame(player);
+            Game game = new Game(player);
+            game.PlayGame();
         }
     }
 }
