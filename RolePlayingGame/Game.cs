@@ -72,10 +72,6 @@ namespace RolePlayingGame
 
         private void ChooseCharacterClass()
         {
-            // Class selection
-            Console.WriteLine("Please choose your starter class.");
-            Console.WriteLine("1. Monk, 2. Warrior, 3. Mage, 4. Rogue, 5. Priest, 6. Paladin");
-            string userClassChoice = Console.ReadLine();
             this.player.ChooseClass(userClassChoice);
             this.player.ReportChosenClass();
         }

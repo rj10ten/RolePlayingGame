@@ -8,6 +8,9 @@ namespace RolePlayingGame
 {
     public class HumanPlayer : ICreatures, IPlayer
     {
+        private const string Choose_Class_Text = "Please choose your starter class:";
+        private const string Class_List = "1. Monk, 2. Warrior, 3. Mage, 4. Rogue, 5. Priest, 6. Paladin";
+
         public string Name { get; set; }
         public int Level { get; set; }
         public string ClassType { get; set; }
@@ -27,6 +30,11 @@ namespace RolePlayingGame
         // Change this horrendous if tree into a switch
         public void ChooseClass(String userClassChoice)
         {
+            // Class selection
+            Console.WriteLine(Choose_Class_Text);
+            Console.WriteLine(Class_List);
+            userClassChoice = Console.ReadLine();
+
             if (int.Parse(userClassChoice) == 1)
             {
                 ClassType = "Monk";
@@ -69,15 +77,18 @@ namespace RolePlayingGame
             Console.WriteLine("Would you like to change your class or stay with your current selection?" +
                 " Any levels gained in a class will remain and you can keep previously learned abilities.");
             Console.WriteLine(" 1. Change Class, 2. Stick with my current class.");
+
             string changeClass = Console.ReadLine();
+
             if (int.Parse(changeClass) == 1)
             {
-            string newClass = Console.ReadLine();
-            ClassType = ClassType + ", " + newClass;
+                string newClass = Console.ReadLine();
+                ClassType = ClassType + ", " + newClass;
                 // This overrides the previous class, need to add to an array perhaps
-            ChooseClass(newClass);
-            ReportChosenClass();
-            } else
+                ChooseClass(newClass);
+                ReportChosenClass();
+            }
+            else
             {
                 Console.WriteLine("You have not chosen a new class. You are still a " + ClassType + ".");
             }
