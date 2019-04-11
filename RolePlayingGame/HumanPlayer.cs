@@ -8,23 +8,16 @@ namespace RolePlayingGame
 {
     public class HumanPlayer : ICreatures, IPlayer
     {
-
-        public string name;
-        public int level;
-        public string classType;
-        public int classLevel;
-        public int maxHealth;
-        public int currentHealth;
-
         public void PrintStats()
         {
-            Console.WriteLine("Your level is: " + level + ".");
-            Console.WriteLine("Your class is: " + classType 
-                + " and it's level is: " + classLevel + ".");
-            Console.WriteLine("Your current health is: " + currentHealth
-                + ". Your max health is: " + maxHealth + ".");
+            Console.WriteLine("Your level is: " + Level + ".");
+            Console.WriteLine("Your class is: " + ClassType 
+                + " and it's level is: " + ClassLevel + ".");
+            Console.WriteLine("Your current health is: " + CurrentHealth
+                + ". Your max health is: " + MaxHealth + ".");
         }
 
+        // Change this horrendous if tree into a switch
         public void ChooseClass(String userClassChoice)
         {
             if (int.Parse(userClassChoice) == 1)
@@ -60,19 +53,14 @@ namespace RolePlayingGame
 
         public void ReportChosenClass()
         {
-            Console.WriteLine("You have chosen " + classType + " as your class.");
+            Console.WriteLine("You have chosen " + ClassType + " as your class.");
         }
 
-        public string Name { get => name; set => name = value; }
-
-        public int Level { get => level; set => level = value; }
-
-        public string ClassType { get => classType; set => classType = value; }
-
-        public int ClassLevel { get => classLevel; set => classLevel = value; }
-
-        public int MaxHealth { get => maxHealth; set => maxHealth = value; }
-
-        public int CurrentHealth { get => currentHealth; set => currentHealth = value; }
+        public string Name { get; set; }
+        public int Level { get; set; }
+        public string ClassType { get; set; }
+        public int ClassLevel { get; set; }
+        public int MaxHealth { get; set; }
+        public int CurrentHealth { get; set; }
     }
 }

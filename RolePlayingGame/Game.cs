@@ -30,7 +30,8 @@ namespace RolePlayingGame
 
             if (introChoice == 1) {
                 Console.WriteLine(ConfirmationText);
-            } else
+            }
+            else
             {
                 Console.WriteLine(ExitGameText);
                 Environment.Exit(2);
@@ -39,20 +40,17 @@ namespace RolePlayingGame
 
         public void MakeStarterCharacter()
         {
-            // Name selection
-            Console.WriteLine("Please choose a name for your character.");
-            string userInput = Console.ReadLine();
-            this.player.Name = userInput;
-            Console.WriteLine("You have chosen the name: " + userInput);
+            ChooseCharacterName();
+            ChooseCharacterClass();
+            SetAndPrintDefaultStats();
 
-            // Class selection
-            Console.WriteLine("Please choose your starter class.");
-            Console.WriteLine("1. Monk, 2. Warrior, 3. Mage, 4. Rogue, 5. Priest, 6. Paladin");
-            //int userClassChoice = Console.Read();
-            string userClassChoice = Console.ReadLine();
-            this.player.ChooseClass(userClassChoice);
-            this.player.ReportChosenClass();
+            // Confirmation of character completion, add loop to allow recreation of character
+            Console.WriteLine("Are you happy to procede with your character?");
+            string characterConfirmation = Console.ReadLine();
+        }
 
+        private void SetAndPrintDefaultStats()
+        {
             // This sets the default characters stats, add random stat generation later
             this.player.ClassLevel = 1;
             this.player.CurrentHealth = 10;
@@ -61,12 +59,26 @@ namespace RolePlayingGame
 
             // This prints the assigned stats
             this.player.PrintStats();
-
-            // Confirmation of character completion, add loop to allow recreation of character
-            Console.WriteLine("Are you happy to procede with your character?");
-            string characterConfirmation = Console.ReadLine();
         }
 
+        private void ChooseCharacterClass()
+        {
+            // Class selection
+            Console.WriteLine("Please choose your starter class.");
+            Console.WriteLine("1. Monk, 2. Warrior, 3. Mage, 4. Rogue, 5. Priest, 6. Paladin");
+            string userClassChoice = Console.ReadLine();
+            this.player.ChooseClass(userClassChoice);
+            this.player.ReportChosenClass();
+        }
+
+        private void ChooseCharacterName()
+        {
+            // Name selection
+            Console.WriteLine("Please choose a name for your character.");
+            string userInput = Console.ReadLine();
+            this.player.Name = userInput;
+            Console.WriteLine("You have chosen the name: " + userInput);
+        }
 
         public void PlayGame()
         {
